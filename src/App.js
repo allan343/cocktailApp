@@ -1,25 +1,71 @@
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import Home from './Home/Home';
+import AddCockTail from './AddCockTail/AddCockTail';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component {
+
+
+  state = {
+    //array that holds all shows
+    cocktailApi: [],
+    cocktails: [],
+    id: '',
+    cocktail:{}
+};
+
+handleAddCockTail = (classObject) => {
+console.log("does this work?")
+ 
+              const newArr = [...this.state.cocktails, classObject];
+              this.setState({
+                  cocktails: newArr
+              });
+          
+      
+};
+
+renderNavRoutes() {
+  return (
+    <>
+  <Route
+  key={'/'}
+  exact path={'/'}
+  component={Home}
+/>
+
+  <Route
+  key={'/AddCockTail'}
+  exact path={'/AddCockTail'}
+  component={AddCockTail}
+/>
+</>
+);
+}
+
+  render(){
+
+    const value = {
+      cocktails: this.state.cocktails,
+      addCockTail: this.handleAddCockTail,
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      
+      <div className="App">
+          <header className="App__header">
+
+          </header>
+          <div >{this.renderNavRoutes()}</div>
+      </div>
+ 
     </div>
+
   );
+}
 }
 
 export default App;
