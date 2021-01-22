@@ -3,7 +3,7 @@ import ApiContext from '../ApiContext/ApiContext';
 
 
 
-class AddCockTail extends Component {
+class AddCockTail extends React.Component {
 
   static contextType = ApiContext;
   
@@ -17,8 +17,8 @@ class AddCockTail extends Component {
   updateCockTail(cocktailQuery) {
     console.log(cocktailQuery)
     this.setState({ cocktailQuery:cocktailQuery });
-  }
-
+  };
+/*
 searchCocktail(cocktailQuery) {
   console.log(cocktailQuery)
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailQuery}`)
@@ -37,7 +37,7 @@ searchCocktail(cocktailQuery) {
 
       console.log(this.context.cocktails)
 }
-
+*/
   render(){
   return (
     <div>
@@ -45,6 +45,7 @@ searchCocktail(cocktailQuery) {
 
           event.preventDefault();
          console.log("submit")
+         
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.cocktailQuery}`)
             .then((cockTailRes) => {
                 if (!cockTailRes.ok)
@@ -74,13 +75,8 @@ searchCocktail(cocktailQuery) {
 
         
           <h1>Country List</h1>
-          <input 
-    
-     key="random1"
- 
-     placeholder={"Search Cocktail"}
-   
-    />
+          <input type="text" className="folder__control"
+                name="classname" id="classname"  onChange={e => this.updateCockTail(e.target.value)} required="required" />
      <button type="submit" className="saveClassButton" >
                   Save
                 </button>
