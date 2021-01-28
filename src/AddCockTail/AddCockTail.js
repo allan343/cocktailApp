@@ -46,7 +46,7 @@ class AddCockTail extends React.Component {
 
             event.preventDefault();
             console.log("submit")
-            /*
+            
                fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.cocktailQuery}`)
                .then((cockTailRes) => {
                    if (!cockTailRes.ok)
@@ -61,7 +61,7 @@ class AddCockTail extends React.Component {
                .catch(error => {
                });
          
-               */
+               
             //add class object to class array
             // then go back to previous page
             // this.context.addCockTail(cockTailRes)

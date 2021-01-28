@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Home from './Home/Home';
 import AddCockTail from './AddCockTail/AddCockTail';
+import ApiContext from './ApiContext/ApiContext';
 import logo from './logo.svg';
 import './App.css';
 
@@ -23,7 +24,7 @@ console.log("does this work?")
               this.setState({
                   cocktails: newArr
               });
-          
+          console.log(this.state.cocktails);
       
 };
 
@@ -49,9 +50,10 @@ renderNavRoutes() {
 
     const value = {
       cocktails: this.state.cocktails,
-      addCockTail: this.handleAddCockTail,
+      addCockTail: this.handleAddCockTail
     }
   return (
+    <ApiContext.Provider value={value}>
     <div className="App">
      
       
@@ -63,6 +65,7 @@ renderNavRoutes() {
       </div>
  
     </div>
+    </ApiContext.Provider>
 
   );
 }
