@@ -6,20 +6,17 @@ import ApiContext from '../ApiContext/ApiContext';
 
 
 
-class CockTaiList extends Component {
+class CockTailList extends Component {
   static contextType = ApiContext;
 
-  static defaultProps = {
-    cocktails: [],
-    message:''
-  };
+
 
   constructor(props) {
     super(props);
   }
 
   render() {
-
+ 
     const { cocktails } = this.props;
    
   
@@ -47,7 +44,7 @@ return (
     );
     }
 
-    
+   
   }
 
 
