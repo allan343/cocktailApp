@@ -32,8 +32,7 @@ return (
 
             <li key={cocktail.idDrink} id="class" >
               <CockTail
-                key={cocktail.id}
-                {...cocktail}
+              cocktail={cocktail}
               />
             </li>
           )}

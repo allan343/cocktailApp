@@ -18,6 +18,11 @@ class AddCockTail extends React.Component {
     console.log(cocktailQuery)
     this.setState({ cocktailQuery: cocktailQuery });
   };
+
+  cancelHandle = (e) => {
+    e.preventDefault();
+    this.props.history.goBack();
+  }
   /*
   searchCocktail(cocktailQuery) {
     console.log(cocktailQuery)
@@ -66,7 +71,9 @@ class AddCockTail extends React.Component {
             // then go back to previous page
             // this.context.addCockTail(cockTailRes)
             // this.props.history.goBack();
-          }}>
+          }}
+          
+          >
 
           <div>
           
@@ -75,7 +82,9 @@ class AddCockTail extends React.Component {
             <button type="submit" className="saveClassButton" >
               Save
                 </button>
-
+                <button type="cancel" className="cancelShowButton" onClick={this.cancelHandle}>
+              Back
+        </button>
 
           </div>
         </form>
