@@ -16,19 +16,39 @@ class App extends Component {
     cocktailApi: [],
     cocktails: [],
     id: '',
-    cocktail:{}
+    cocktail:{},
+    cocktailClicked: false
 };
 
 handleAddCockTail = (classObject) => {
+  console.log(classObject)
 console.log("does this work?")
  
-              const newArr = [...this.state.cocktails, classObject];
+let noteObject ={notes:"",rating:0};
+
+//let cockTailObject =[...classObject,...noteObject];
+let cockTailObject = {
+  ...classObject,
+  ...noteObject
+};
+/*console.log("hi");
+console.log(cockTailObject);
+*/
+
+
+
+              const newArr = [...this.state.cocktails, cockTailObject];
               this.setState({
                   cocktails: newArr
               });
           console.log(this.state.cocktails);
       
 };
+
+setCockTailClicked = (drinkId) => {
+  this.setState({ cocktailClicked: true });
+  this.setClassId(drinkId);
+}
 
 renderNavRoutes() {
   return (

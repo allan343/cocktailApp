@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CockTail from '../CockTail/CockTail'
+import CockTailDetails from '../CockTailDetails/CockTailDetails'
 import { NavLink} from 'react-router-dom';
 
 import ApiContext from '../ApiContext/ApiContext';
@@ -13,6 +14,18 @@ class CockTailList extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      clicked: false
+    };
+  }
+
+  cocktailClicked(cocktailId) {
+    this.setState({ clicked: true });
+    this.context.setCockTailId(cocktailId);
+  }
+
+  closeCockTail() {
+    this.setState({ clicked: false });
   }
 
   render() {
@@ -26,6 +39,8 @@ class CockTailList extends Component {
 return (
     <div>
     {
+
+(this.state.clicked) ?<CockTailDetails  cocktail={}/> :
       <div className="classList">
         <ul className='SchoolClassList__list' aria-live='polite'>
           {cocktails.map(cocktail =>

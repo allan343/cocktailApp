@@ -62,6 +62,7 @@ class AddCockTail extends React.Component {
                  console.log(cockTailRes.drinks[0].idDrink)
                 //   this.setState({ cockTailQuery: cockTailRes });
                    this.context.addCockTail(cockTailRes)
+                  console.log(this.context.cocktails)
                })
                .catch(error => {
                });
@@ -83,7 +84,7 @@ class AddCockTail extends React.Component {
               Save
                 </button>
                 <button type="cancel" className="cancelShowButton" onClick={this.cancelHandle}>
-              Back
+              Cancel
         </button>
 
           </div>

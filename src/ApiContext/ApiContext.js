@@ -6,6 +6,8 @@ export default React.createContext({
   cocktails: [],
   id: '',
   cocktail:{},
-  addCockTail: () =>{ }
+  addCockTail: () =>{ },
+  getCockTail: () =>{ },
+  getCockTailId:()=>{}
   
 })
