@@ -22,6 +22,7 @@ class CockTailList extends Component {
   cocktailClicked(cocktailId) {
     this.setState({ clicked: true });
     this.context.setCockTailId(cocktailId);
+    
   }
 
   closeCockTail() {
@@ -40,12 +41,12 @@ return (
     <div>
     {
 
-(this.state.clicked) ?<CockTailDetails  cocktail={}/> :
+(this.state.clicked) ?<CockTailDetails  cocktailid={this.context.getCockTailId()}/> :
       <div className="classList">
         <ul className='SchoolClassList__list' aria-live='polite'>
           {cocktails.map(cocktail =>
 
-            <li key={cocktail.idDrink} id="class" >
+            <li key={cocktail.idDrink} id="class" onClick={()=>this.cocktailClicked(cocktail.idDrink)}>
               <CockTail
               cocktail={cocktail}
               />

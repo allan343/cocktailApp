@@ -6,8 +6,10 @@ export default React.createContext({
   cocktails: [],
   id: '',
   cocktail:{},
+  setCockTailClicked:{},
   addCockTail: () =>{ },
   getCockTail: () =>{ },
-  getCockTailId:()=>{}
+  getCockTailId:()=>{},
+  setCockTailId:()=>{}
   
 })

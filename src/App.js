@@ -45,10 +45,26 @@ console.log(cockTailObject);
       
 };
 
+setCockTailId=(drinkID)=>
+{
+this.setState({id:drinkID});
+
+}
+
 setCockTailClicked = (drinkId) => {
   this.setState({ cocktailClicked: true });
-  this.setClassId(drinkId);
+  this.setCockTailId(drinkId);
 }
+
+getCockTailId = ()=>{
+  return this.state.id;
+}
+
+getCockTail=(id)=>{
+
+ return this.state.cocktails.find((cocktail)=>id==cocktail.idDrink)
+}
+
 
 renderNavRoutes() {
   return (
@@ -72,7 +88,11 @@ renderNavRoutes() {
 
     const value = {
       cocktails: this.state.cocktails,
-      addCockTail: this.handleAddCockTail
+      addCockTail: this.handleAddCockTail,
+      setCockTailClicked:this.setCockTailClicked,
+      setCockTailId: this.setCockTailId,
+      getCockTailId: this.getCockTailId,
+      getCockTail:this.getCockTail
     }
   return (
     <ApiContext.Provider value={value}>
