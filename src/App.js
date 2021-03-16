@@ -36,7 +36,7 @@ console.log(cockTailObject);
 */
 
 
-
+console.log(this.state.cocktails);
               const newArr = [...this.state.cocktails, cockTailObject];
               this.setState({
                   cocktails: newArr

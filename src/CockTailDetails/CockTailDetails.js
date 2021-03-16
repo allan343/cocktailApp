@@ -14,7 +14,10 @@ export default class CockDetails extends React.Component {
 
   render() {
 
+    console.log("coctkail id" + this.props.cocktailid)
     let cocktail = this.context.getCockTail(this.props.cocktailid);
+
+    console.log("cocktail object from prop is"+ cocktail)
 
     return (
 

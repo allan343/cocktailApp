@@ -61,8 +61,11 @@ class AddCockTail extends React.Component {
                .then((cockTailRes) => {
                  console.log(cockTailRes.drinks[0].idDrink)
                 //   this.setState({ cockTailQuery: cockTailRes });
-                   this.context.addCockTail(cockTailRes)
+                //let jsonObject = JSON.parse(cockTailRes.drinks[0]);
+                   this.context.addCockTail(cockTailRes.drinks[0])
+                 //this.context.addCockTail(jsonObject)
                   console.log(this.context.cocktails)
+                  console.log(this.context.cocktails[0].idDrink)
                })
                .catch(error => {
                });

@@ -20,6 +20,7 @@ class CockTailList extends Component {
   }
 
   cocktailClicked(cocktailId) {
+    console.log("list  id: "+ cocktailId)
     this.setState({ clicked: true });
     this.context.setCockTailId(cocktailId);
     
@@ -33,7 +34,7 @@ class CockTailList extends Component {
  
     const { cocktails } = this.props;
    
-  
+  console.log(cocktails)
   
    
 
