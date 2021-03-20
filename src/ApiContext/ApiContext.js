@@ -10,6 +10,8 @@ export default React.createContext({
   addCockTail: () =>{ },
   getCockTail: () =>{ },
   getCockTailId:()=>{},
-  setCockTailId:()=>{}
+  setCockTailId:()=>{},
+  deleteCockTail:()=>{},
+  updateCockTail:()=>{}
   
 })

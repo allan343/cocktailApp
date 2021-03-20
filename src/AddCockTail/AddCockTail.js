@@ -15,7 +15,7 @@ class AddCockTail extends React.Component {
   }
 
   updateCockTail(cocktailQuery) {
-    console.log(cocktailQuery)
+   // console.log(cocktailQuery)
     this.setState({ cocktailQuery: cocktailQuery });
   };
 
@@ -60,12 +60,20 @@ class AddCockTail extends React.Component {
                })
                .then((cockTailRes) => {
                  console.log(cockTailRes.drinks[0].idDrink)
-                //   this.setState({ cockTailQuery: cockTailRes });
-                //let jsonObject = JSON.parse(cockTailRes.drinks[0]);
-                   this.context.addCockTail(cockTailRes.drinks[0])
-                 //this.context.addCockTail(jsonObject)
-                  console.log(this.context.cocktails)
-                  console.log(this.context.cocktails[0].idDrink)
+                let drink ={
+                  id:cockTailRes.drinks[0].idDrink,
+                  name: cockTailRes.drinks[0].strDrink,
+                  type: cockTailRes.drinks[0].strGlass,
+                  video: cockTailRes.drinks[0].strVideo,
+                  category: cockTailRes.drinks[0].strCategory,
+                  instructions: cockTailRes.drinks[0].strInstructions,
+                  image: cockTailRes.drinks[0].strImage,
+                  notes:  cockTailRes.drinks[0].strNote,
+                  rating: cockTailRes.drinks[0].strRatings
+                
+                }
+                   this.context.addCockTail(drink)
+               
                })
                .catch(error => {
                });

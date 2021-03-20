@@ -20,7 +20,7 @@ class CockTailList extends Component {
   }
 
   cocktailClicked(cocktailId) {
-    console.log("list  id: "+ cocktailId)
+   // console.log("list  id: "+ cocktailId)
     this.setState({ clicked: true });
     this.context.setCockTailId(cocktailId);
     
@@ -34,7 +34,7 @@ class CockTailList extends Component {
  
     const { cocktails } = this.props;
    
-  console.log(cocktails)
+  //console.log(cocktails)
   
    
 
@@ -42,14 +42,15 @@ return (
     <div>
     {
 
-(this.state.clicked) ?<CockTailDetails  cocktailid={this.context.getCockTailId()}/> :
+(this.state.clicked) ?<CockTailDetails  id={this.context.getCockTailId()}/> :
       <div className="classList">
         <ul className='SchoolClassList__list' aria-live='polite'>
           {cocktails.map(cocktail =>
 
-            <li key={cocktail.idDrink} id="class" onClick={()=>this.cocktailClicked(cocktail.idDrink)}>
+            <li key={cocktail.id} id="class" onClick={()=>this.cocktailClicked(cocktail.id)}>
               <CockTail
               cocktail={cocktail}
+           
               />
             </li>
           )}

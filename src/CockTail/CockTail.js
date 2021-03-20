@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-export default function CockTail({cocktail}) {
+export default function CockTail(props) {
   
-  //let cocktail = cocktail
+  let cocktail = props.cocktail
   console.log(cocktail)
   console.log(cocktail.strDrink)
  // var cocktail = JSON.parse(drinkItem);
@@ -13,9 +13,9 @@ export default function CockTail({cocktail}) {
   return (
     <div className='SchoolClassItem__row'>
      <div className='SchoolClassItem__row'>
-     {<div className="courseName"> {cocktail.strDrink}</div>}
-      {<div className="days"> <span id="item-content">{cocktail.strCategory}</span></div>}
-      {<div className="startEnd"> <span id="item-content">{cocktail.strTags}</span></div>}
+     {<div className="courseName"> {cocktail.name}</div>}
+      {<div className="days"> <span id="item-content">{cocktail.category}</span></div>}
+      {<div className="startEnd"> <span id="item-content">{cocktail.type}</span></div>}
     </div>
     
     </div>

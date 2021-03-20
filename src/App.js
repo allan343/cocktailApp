@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Home from './Home/Home';
+import EditCockTailDetailsForm from './EditCockTailDetails/EditCockTailDetails'
 
 
 import AddCockTail from './AddCockTail/AddCockTail';
@@ -21,8 +22,8 @@ class App extends Component {
 };
 
 handleAddCockTail = (classObject) => {
-  console.log(classObject)
-console.log("does this work?")
+  //console.log(classObject)
+//console.log("does this work?")
  
 let noteObject ={notes:"",rating:0};
 
@@ -62,7 +63,21 @@ getCockTailId = ()=>{
 
 getCockTail=(id)=>{
 
- return this.state.cocktails.find((cocktail)=>id==cocktail.idDrink)
+ return this.state.cocktails.find((cocktail)=>id==cocktail.id)
+}
+
+updateCockTail=(drink,id)=>{
+
+console.log(drink)
+console.log(id)
+let cocktail=this.state.cocktails.find((cocktail)=>id==cocktail.id);
+console.log(cocktail)
+console.log(drink)
+ cocktail = Object.assign(cocktail,drink);
+this.setState({
+  cocktails: this.state.cocktails
+});
+
 }
 
 
@@ -80,6 +95,11 @@ renderNavRoutes() {
   exact path={'/AddCockTail'}
   component={AddCockTail}
 />
+<Route exact path="/CockTailDetails/Edit/:drinkId" render={
+                    (routeProps) => {
+                        return <EditCockTailDetailsForm {...this.getCockTail(routeProps.match.params.drinkId)}  {...routeProps}>
+                        </EditCockTailDetailsForm>
+                    }} />
 </>
 );
 }
@@ -92,7 +112,8 @@ renderNavRoutes() {
       setCockTailClicked:this.setCockTailClicked,
       setCockTailId: this.setCockTailId,
       getCockTailId: this.getCockTailId,
-      getCockTail:this.getCockTail
+      getCockTail:this.getCockTail,
+      updateCockTail:this.updateCockTail
     }
   return (
     <ApiContext.Provider value={value}>
