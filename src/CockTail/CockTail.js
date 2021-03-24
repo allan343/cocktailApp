@@ -16,6 +16,24 @@ export default function CockTail(props) {
      {<div className="courseName"> {cocktail.name}</div>}
       {<div className="days"> <span id="item-content">{cocktail.category}</span></div>}
       {<div className="startEnd"> <span id="item-content">{cocktail.type}</span></div>}
+     { <img src={cocktail.image} alt="Girl in a jacket" width="200" height="200"></img> }
+  
+ {
+  <video  src={cocktail.video} type="video/mp4">
+ 
+
+  </video> 
+
+  
+  }
+
+  {
+
+    <iframe width="420" height="315"
+src={cocktail.video}>
+</iframe>
+  }
+      {<div className="startEnd"> <span id="item-content">{cocktail.video}</span></div>}
     </div>
     
     </div>

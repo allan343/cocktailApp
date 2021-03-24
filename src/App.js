@@ -81,6 +81,19 @@ this.setState({
 }
 
 
+deleteCockTail =(id)=>{
+
+  let filtered = this.state.cocktails.filter((cocktail)=>
+    cocktail.id != id
+);
+
+this.setState({
+  cocktails:filtered
+});
+
+}
+
+
 renderNavRoutes() {
   return (
     <>
@@ -113,7 +126,8 @@ renderNavRoutes() {
       setCockTailId: this.setCockTailId,
       getCockTailId: this.getCockTailId,
       getCockTail:this.getCockTail,
-      updateCockTail:this.updateCockTail
+      updateCockTail:this.updateCockTail,
+      deleteCockTail:this.deleteCockTail
     }
   return (
     <ApiContext.Provider value={value}>

@@ -32,8 +32,8 @@ class EditSchoolClassForm extends React.Component {
   }
   deleteHandle = (e) => {
     e.preventDefault();
-    this.context.deleteClass(this.context.getClassId());
-    this.context.closeClass();
+    this.context.deleteCockTail(this.context.getCockTailId());
+    //this.context.closeClass();
     this.props.history.goBack();
   }
 

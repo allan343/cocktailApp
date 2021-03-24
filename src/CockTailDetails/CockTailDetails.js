@@ -10,7 +10,10 @@ export default class CockDetails extends React.Component {
     super(props);
   }
 
+cancelHandle = ()=>{
+ this.props.closeCockTail();
 
+}
 
   render() {
 
@@ -22,7 +25,7 @@ export default class CockDetails extends React.Component {
     return (
 
       <div className='HomeworkDetails__row'>
-        <button type="cancel" className="cancelShowButton" onClick={this.props.hideCockTail}>
+        <button type="cancel" className="cancelShowButton" onClick={this.props.closeCockTail}>
           Back
         </button>
         {<div className="IBATags"><span id="item-details-label"> Name:</span> <span id="item-content"> {cocktail.name}</span></div>}

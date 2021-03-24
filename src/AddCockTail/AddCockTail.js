@@ -67,12 +67,13 @@ class AddCockTail extends React.Component {
                   video: cockTailRes.drinks[0].strVideo,
                   category: cockTailRes.drinks[0].strCategory,
                   instructions: cockTailRes.drinks[0].strInstructions,
-                  image: cockTailRes.drinks[0].strImage,
+                  image: cockTailRes.drinks[0].strDrinkThumb,
                   notes:  cockTailRes.drinks[0].strNote,
                   rating: cockTailRes.drinks[0].strRatings
                 
                 }
                    this.context.addCockTail(drink)
+                   this.props.history.goBack();
                
                })
                .catch(error => {
